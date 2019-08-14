@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 import './index.css'
 import App from './App'
+import configureStore from './hook-store/products'
 import productReducer from './store/reducers/products'
 import ProductsProvider from './context/products-context'
 
@@ -15,11 +16,12 @@ import ProductsProvider from './context/products-context'
 
 // const store = createStore(rootReducer)
 
+configureStore()
+
 ReactDOM.render(
-  <ProductsProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </ProductsProvider>,
-  document.getElementById('root'),
+  /*<ProductsProvider>*/
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  /*</ProductsProvider>*/ document.getElementById('root'),
 )
